@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-console.log('Environment Variables:', process.env.GPS_SERVER_PORT);
+//console.log('Environment Variables:', process.env.GPS_SERVER_PORT);
 
 const config = {
 
