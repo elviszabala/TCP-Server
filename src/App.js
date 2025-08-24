@@ -7,13 +7,13 @@ class App {
     constructor(config) {
         this.config = config;
         this.gpsServer = null;
-        console.log('Constructor app');
+        
         
     }
 
     async initializate(){
         //inicializamos la BBDD
-        console.log('Inicializando');
+      
 
 
 
@@ -24,7 +24,7 @@ class App {
 
     async start(){
         await this.gpsServer.start();
-        console.log('Se inicia el servidor en App file esperando la promesa await this.gpsServer.start');
+       
     }
 
     async shutdown(){

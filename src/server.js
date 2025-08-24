@@ -8,11 +8,8 @@ async function startServer() {
     try {
 
        const app = new App(config);
-       console.log('Creamos la instancia de App');
        await app.initializate();
-       console.log('Ahora esperamos la promesa app.initializate');
        await app.start();
-       console.log('Ahora esperamos la promesa app.start');
 
       
        process.on('SIGTERM', async () => {
