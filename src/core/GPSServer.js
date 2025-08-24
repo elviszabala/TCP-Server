@@ -106,7 +106,7 @@ class GPSServer extends EventEmitter {
     }
 
     handleData(connection, data){
-       // console.log('aqui entro a manejar la data recibida', data);
+       console.log('aqui entro a manejar la data recibida', data);
         connection.updateActivity();
         
        

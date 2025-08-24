@@ -7,6 +7,8 @@ class App {
     constructor(config) {
         this.config = config;
         this.gpsServer = null;
+        this.database = null;
+        this.wsServer =null;
         
         
     }
