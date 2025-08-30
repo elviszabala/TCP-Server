@@ -15,7 +15,8 @@
     "express": "^5.1.0",
     "express-rate-limit": "^8.0.1",
     "sequelize": "^6.37.7",
-    "socket.io": "^4.8.1"
+    "socket.io": "^4.8.1",
+    "winston": "^3.17.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

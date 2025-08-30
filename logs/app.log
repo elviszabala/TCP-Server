@@ -1,0 +1,52 @@
+{"level":"info","message":"GPS Tracking Server started on port 8080","timestamp":"2025-08-30 17:10:28"}
+{"level":"info","message":"GPS Tracking Server started on port 8080","timestamp":"2025-08-30 17:13:19"}
+{"level":"info","message":"GPS Tracking Server started on port 8080","timestamp":"2025-08-30 17:14:19"}
+{"level":"info","message":"GPS Tracking Server started on port 8080","timestamp":"2025-08-30 17:14:51"}
+{"level":"info","message":"GPS Tracking Server started on port 8080","timestamp":"2025-08-30 17:15:13"}
+{"level":"info","message":"GPS Tracking Server started on port 8080","timestamp":"2025-08-30 17:18:15"}
+{"level":"info","message":"GPS Tracking Server started on port 8080","timestamp":"2025-08-30 17:18:21"}
+{"level":"info","message":"Data received from 192.168.0.23:65273: Sending from Packet Sender","timestamp":"2025-08-30 17:19:19"}
+{"level":"info","message":"GPS Tracking Server started on port 8080","timestamp":"2025-08-30 17:22:16"}
+{"level":"info","message":"GPS Tracking Server started on port 8080","timestamp":"2025-08-30 17:22:36"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:42"}
+{"level":"info","message":"Data received from 192.168.0.23:49228: Sending from Packet Sender","timestamp":"2025-08-30 17:22:42"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:47"}
+{"level":"info","message":"Data received from 192.168.0.23:49242: Sending from Packet Sender","timestamp":"2025-08-30 17:22:47"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:48"}
+{"level":"info","message":"Data received from 192.168.0.23:49255: Sending from Packet Sender","timestamp":"2025-08-30 17:22:48"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:48"}
+{"level":"info","message":"Data received from 192.168.0.23:49256: Sending from Packet Sender","timestamp":"2025-08-30 17:22:48"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:48"}
+{"level":"info","message":"Data received from 192.168.0.23:49257: Sending from Packet Sender","timestamp":"2025-08-30 17:22:48"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:48"}
+{"level":"info","message":"Data received from 192.168.0.23:49258: Sending from Packet Sender","timestamp":"2025-08-30 17:22:48"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:48"}
+{"level":"info","message":"Data received from 192.168.0.23:49259: Sending from Packet Sender","timestamp":"2025-08-30 17:22:48"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:48"}
+{"level":"info","message":"Data received from 192.168.0.23:49260: Sending from Packet Sender","timestamp":"2025-08-30 17:22:48"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:48"}
+{"level":"info","message":"Data received from 192.168.0.23:49261: Sending from Packet Sender","timestamp":"2025-08-30 17:22:48"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:49"}
+{"level":"info","message":"Data received from 192.168.0.23:49262: Sending from Packet Sender","timestamp":"2025-08-30 17:22:49"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:49"}
+{"level":"info","message":"Data received from 192.168.0.23:49263: Sending from Packet Sender","timestamp":"2025-08-30 17:22:49"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:49"}
+{"level":"info","message":"Data received from 192.168.0.23:49264: Sending from Packet Sender","timestamp":"2025-08-30 17:22:49"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:49"}
+{"level":"info","message":"Data received from 192.168.0.23:49265: Sending from Packet Sender","timestamp":"2025-08-30 17:22:49"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:49"}
+{"level":"info","message":"Data received from 192.168.0.23:49266: Sending from Packet Sender","timestamp":"2025-08-30 17:22:49"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:49"}
+{"level":"info","message":"Data received from 192.168.0.23:49267: Sending from Packet Sender","timestamp":"2025-08-30 17:22:49"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:50"}
+{"level":"info","message":"Data received from 192.168.0.23:49268: Sending from Packet Sender","timestamp":"2025-08-30 17:22:50"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:50"}
+{"level":"info","message":"Data received from 192.168.0.23:49269: Sending from Packet Sender","timestamp":"2025-08-30 17:22:50"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:50"}
+{"level":"info","message":"Data received from 192.168.0.23:49271: Sending from Packet Sender","timestamp":"2025-08-30 17:22:50"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:50"}
+{"level":"info","message":"Data received from 192.168.0.23:49272: Sending from Packet Sender","timestamp":"2025-08-30 17:22:50"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:50"}
+{"level":"info","message":"Data received from 192.168.0.23:49274: Sending from Packet Sender","timestamp":"2025-08-30 17:22:50"}
+{"level":"warn","message":{"data":[83,101,110,100,105,110,103,32,102,114,111,109,32,80,97,99,107,101,116,32,83,101,110,100,101,114],"type":"Buffer"},"timestamp":"2025-08-30 17:22:50"}
+{"level":"info","message":"Data received from 192.168.0.23:49275: Sending from Packet Sender","timestamp":"2025-08-30 17:22:50"}

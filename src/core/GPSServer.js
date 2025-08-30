@@ -1,6 +1,7 @@
 const net = require('net');
 const EventEmitter = require('events');
 const ConnectionManager = require('./ConnectionManager');
+const logger = require('../utils/logger');
 
 
 class GPSServer extends EventEmitter {
@@ -106,8 +107,13 @@ class GPSServer extends EventEmitter {
     }
 
     handleData(connection, data){
-       console.log('aqui entro a manejar la data recibida', data);
+        logger.warn(data);
+        //logger.info('packet', data);
+        //console.log('aqui entro a manejar la data recibida', data);
         connection.updateActivity();
+       // logger.debug(`Data received from ${connection.id}: ${data.toString().trim()}`);
+        logger.info(`Data received from ${connection.id}: ${data.toString().trim()}`);
+
         
        
     }
