@@ -99,7 +99,7 @@ class ConnectionManager {
         const timeout = 300000; // 5 minutos
         //const timeout = 6000; // 5 minutos
         const inactiveConnections = [];
-        console.log(`Total connections: ${this.connections.size}`);
+        //console.log(`Total connections: ${this.connections.size}`);
 
         for (const [clientId, connection] of this.connections){
             //console.log(connection.id, connection.createdAt, connection.isActive(), connection.lastActivity);
