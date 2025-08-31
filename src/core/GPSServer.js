@@ -51,6 +51,9 @@ class GPSServer extends EventEmitter {
                 return;
             }
 
+            this.isRunning = false;
+            this.connectionManager.closeAllConnections();
+
             this.server.close(() =>{
                 this.isRunning = false;
                 resolve();
