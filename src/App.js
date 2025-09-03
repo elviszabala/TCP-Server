@@ -1,4 +1,5 @@
 const GPSServer = require('./core/GPSServer');
+const Database = require('./database/connection');
 
 
 
@@ -15,6 +16,8 @@ class App {
 
     async initializate(){
         //inicializamos la BBDD
+        this.database = new Database(this.config.database);
+        await this.database.connect();
       
 
 

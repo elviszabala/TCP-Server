@@ -13,6 +13,22 @@ const config = {
         bufferSize: parseInt(process.env.BUFFER_SIZE) || 4096
 
     },
+    // Configuración de base de datos
+    database: {
+        host: process.env.DB_HOST || 'localhost',
+        port: parseInt(process.env.DB_PORT) || 3306,
+        database: process.env.DB_NAME || 'gps_tracking',
+        username: process.env.DB_USER || 'test',
+        password: process.env.DB_PASSWORD || 'test',
+        dialect: 'mysql',
+        logging: process.env.NODE_ENV === 'development' ? console.log : false,
+        pool: {
+            max: parseInt(process.env.DB_POOL_MAX) || 10,
+            min: parseInt(process.env.DB_POOL_MIN) || 0,
+            acquire: parseInt(process.env.DB_POOL_ACQUIRE) || 30000,
+            idle: parseInt(process.env.DB_POOL_IDLE) || 10000
+        }
+    },
 }
 
 
