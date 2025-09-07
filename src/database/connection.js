@@ -51,7 +51,7 @@ class Database {
 
          // Sincronizar modelos (solo en desarrollo)
         if (process.env.NODE_ENV === 'development') {
-            await this.sequelize.sync({ alter: true });
+           // await this.sequelize.sync({ alter: true });
             logger.info('Database models synchronized');
         }
     }

@@ -64,7 +64,7 @@ class ConnectionManager {
             
             this.connections.delete(clientId);
             //logger.debug(`Connection removed: ${clientId} (Total: ${this.connections.size})`);
-            console.log(`Connection removed: ${clientId} (Total: ${this.connections.size})`)
+            //console.log(`Connection removed: ${clientId} (Total: ${this.connections.size})`)
         }
     }
 

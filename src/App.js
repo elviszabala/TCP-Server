@@ -33,7 +33,7 @@ class App {
         // GPS Server -> WebSocket (posiciones en tiempo real)
 
         this.gpsServer.on('mi-evento', (deviceId) =>{
-            console.log('Evento de dispositivo desconectado recibido en App');
+            //console.log('Evento de dispositivo desconectado recibido en App');
         });
      }
 
