@@ -24,6 +24,7 @@ class GPSServer extends EventEmitter {
                 //this.emit('connection', socket);
                 console.log('New GPS connection established', socket.remoteAddress);
                 this.handleNewConnection(socket);
+                
             });
 
              this.server.on('error', (socket) =>{
@@ -76,15 +77,18 @@ class GPSServer extends EventEmitter {
             //this.connectionManager.message();
             this.handleData(connection, data);
             this.connectionManager.messageTest(clientId);
+            this.emit('mi-evento', connection.deviceId);
         });
 
         socket.on('end', () => {
             console.log(`❌ Cliente desconectado: ${socket.remoteAddress}:${socket.remotePort}`);
-            //this.connectionManager.removeConnection(clientId);
+            this.connectionManager.removeConnection(clientId);
         });
 
         socket.on('close', () => {
             console.log(`🔒 Socket cerrado: ${socket.remoteAddress}:${socket.remotePort}`);
+            this.connectionManager.removeConnection(clientId);
+            this.emit('device-disconnected', connection.deviceId);
         });
 
         socket.on('error', (err) => {

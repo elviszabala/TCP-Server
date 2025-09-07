@@ -74,6 +74,7 @@ class Database {
             return true;
         } catch (error) {
             logger.error('Database connection test failed:', error);
+            
             return false;
         }
     }
