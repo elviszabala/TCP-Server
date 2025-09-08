@@ -13,6 +13,17 @@ const config = {
         bufferSize: parseInt(process.env.BUFFER_SIZE) || 4096
 
     },
+
+     // Configuración de WebSocket
+    websocket: {
+        port: parseInt(process.env.WS_PORT) || 3001,
+        path: '/socket.io',
+        cors: {
+            origin: process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',') : ['http://localhost:3000'],
+            methods: ['GET', 'POST']
+        }
+    },
+    
     // Configuración de base de datos
     database: {
         host: process.env.DB_HOST || 'localhost',

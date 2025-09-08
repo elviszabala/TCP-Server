@@ -1,3 +1,5 @@
+const logger = require('../utils/logger');
+
 class Connection{
     constructor(id, socket) {
         this.id = id;
@@ -12,6 +14,7 @@ class Connection{
     setDeviceId(deviceId) {
         this.deviceId = deviceId;
         this.isAuthenticated = true;
+        
     }
 
     setProtocol(protocol) {
@@ -50,7 +53,7 @@ class ConnectionManager {
         const connection = new Connection(clientID, socket);
         this.connections.set(clientID, connection);
 
-        //console.log(`Connection added: ${clientID}. Total connections: ${this.connections.size}`);
+        logger.info(`Connection added: ${clientID}. Total connections: ${this.connections.size}`);
         return connection;
 
     }

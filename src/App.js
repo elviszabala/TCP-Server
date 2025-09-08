@@ -1,5 +1,6 @@
 const GPSServer = require('./core/GPSServer');
 const Database = require('./database/connection');
+const WebSocketServer = require('./websocket/WebSocketServer');
 
 
 
@@ -22,8 +23,9 @@ class App {
 
 
 
-        //inicializamos el servidor
+        //inicializamos el servidores
         this.gpsServer = new GPSServer(this.config.gps);
+        this.wsServer = new WebSocketServer(this.config.websocket);
 
         this.setupEventHandlers();
 
@@ -32,18 +34,30 @@ class App {
      setupEventHandlers() {
         // GPS Server -> WebSocket (posiciones en tiempo real)
 
-        this.gpsServer.on('mi-evento', (deviceId) =>{
-            //console.log('Evento de dispositivo desconectado recibido en App');
-        });
+            this.gpsServer.on('position', (data) => {
+                this.wsServer.broadcast('position', data);
+                //console.log('Position event for:', data);
+            });
+
+            // GPS Server -> API (eventos de dispositivos)
+            this.gpsServer.on('device-connected', (deviceId) => {
+                this.wsServer.broadcast('device-status', { deviceId, status: 'online' });
+            });
+
+            this.gpsServer.on('device-disconnected', (deviceId) => {
+                this.wsServer.broadcast('device-status', { deviceId, status: 'offline' });
+            });
      }
 
     async start(){
         await this.gpsServer.start();
+         await this.wsServer.start();
        
     }
 
     async shutdown(){
         if (this.gpsServer) await this.gpsServer.stop();
+         if (this.wsServer) await this.wsServer.stop();
     }
 
 

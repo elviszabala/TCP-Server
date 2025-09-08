@@ -38,7 +38,7 @@ class GPSServer extends EventEmitter {
 
             this.server.listen(this.config.port, this.config.host, ()=>{
                 this.isRunning = true;
-                console.log(`GPS Server listening on ${this.config.host}:${this.config.port}`);
+                //console.log(`GPS Server listening on ${this.config.host}:${this.config.port}`);
                 resolve();
             });
 
@@ -105,14 +105,6 @@ class GPSServer extends EventEmitter {
 
         });
 
-        
-
-
-
-        
-
-
-
 
     }
 
@@ -136,10 +128,6 @@ class GPSServer extends EventEmitter {
       
       
       
-      
-      
-      
-      
         /*   logger.warn(data);
         //logger.info('packet', data);
         //console.log('aqui entro a manejar la data recibida', data);
@@ -147,15 +135,13 @@ class GPSServer extends EventEmitter {
        // logger.debug(`Data received from ${connection.id}: ${data.toString().trim()}`);
         logger.info(`Data received from ${connection.id}: ${data.toString().trim()}`); */
 
-        
-       
     }
 
       processPackets(connection) {
         const packets = this.bufferManager.extractPackets(connection.id);
         
         for (const packet of packets) {
-            console.log('Packet', packet);
+            //console.log('Packet', packet);
             this.processPacket(connection, packet);
            
         }
@@ -164,7 +150,7 @@ class GPSServer extends EventEmitter {
       async processPacket(connection, packet) {
         try {
             //console.log('Entramos a procesar el packet y definir el procotolo: ', connection.protocol);
-            console.log('Packet raw:', packet, ' tamano del packet: ', packet.length);
+            //console.log('Packet raw:', packet, ' tamano del packet: ', packet.length);
             // Detectar protocolo si no está definido
             if (!connection.protocol) {
                 const detectedProtocol = this.protocolManager.detectProtocol(packet);
@@ -185,11 +171,14 @@ class GPSServer extends EventEmitter {
                 logger.warn(`Failed to parse packet from ${connection.id}`);
                 return;
             }
-            console.log('Parsed Data:', parsedData);
+            //esto muestra los datos parseados del gps
+            //console.log('Parsed Data:', parsedData);
+            
+            
 
 
             // Procesar según tipo de datos
-           // await this.handleParsedData(connection, parsedData);
+            await this.handleParsedData(connection, parsedData);
             
             // Enviar respuesta si es necesaria
             const response = this.protocolManager.createResponse(connection.protocol, parsedData);
@@ -201,6 +190,81 @@ class GPSServer extends EventEmitter {
         } catch (error) {
             logger.error(`Error processing packet from ${connection.id}:`, error);
         }
+    }
+
+    async handleParsedData(connection, data) {
+        switch (data.type) {
+            case 'login':
+                await this.handleLogin(connection, data);
+                //console.log('PEticion de login recibida: ', data);
+                break;
+            case 'position':
+                await this.handlePosition(connection, data);
+                //console.log('PEticion de position recibida');
+                break;
+            case 'heartbeat':
+                //await this.handleHeartbeat(connection, data);
+                break;
+            case 'alarm':
+                //await this.handleAlarm(connection, data);
+                break;
+            default:
+                logger.warn(`Unknown data type: ${data.type}`);
+        }
+    }
+
+    async handleLogin(connection, data) {
+        //console.log('a', data);
+        //console.log(' Y debo poner aqui ', data.data.deviceId);
+    
+        connection.setDeviceId(data.data.deviceId);
+        logger.info(`Device logged in: ${data.deviceId} from ${connection.id}`);
+        //this.emit('device-connected', data.deviceId);
+    }
+
+    async handlePosition(connection, data) {
+        if (!connection.deviceId) {
+            logger.warn(`Position received from unregistered device: ${connection.id}`);
+            return;
+        }
+
+        const positionData = {
+            deviceId: connection.deviceId,
+            timestamp: data.data.timestamp,
+            latitude: data.data.latitude,
+            longitude: data.data.longitude,
+            speed: data.data.speed,
+            course: data.data.course,
+            altitude: data.data.altitude,
+            satellites: data.data.satellites,
+            accuracy: data.data.accuracy,
+            battery: data.data.battery,
+            signal: data.data.signal
+        };
+
+        logger.debug(`Position received from ${connection.deviceId}:`, positionData);
+        this.emit('position', positionData);
+    }
+
+    async handleHeartbeat(connection, data) {
+        logger.debug(`Heartbeat from ${connection.deviceId || connection.id}`);
+        // El heartbeat ya actualiza la actividad en handleData
+    }
+
+    async handleAlarm(connection, data) {
+        if (!connection.deviceId) return;
+
+        const alarmData = {
+            deviceId: connection.deviceId,
+            timestamp: data.timestamp,
+            alarmType: data.alarmType,
+            latitude: data.latitude,
+            longitude: data.longitude,
+            additional: data.additional
+        };
+
+        logger.warn(`Alarm received from ${connection.deviceId}:`, alarmData);
+        //this.emit('alarm', alarmData);
     }
 }
 

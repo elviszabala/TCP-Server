@@ -91,7 +91,7 @@ class GT06Protocol extends BaseProtocol {
 
     parsePosition(data) {
 
-        console.log('Data de posicion: ', data);
+        //console.log('Data de posicion: ', data);
         if (data.length < 21) {
             throw new Error('GT06 position data too short');
         }
@@ -103,8 +103,8 @@ class GT06Protocol extends BaseProtocol {
             longitude: parseCoordinate(data.readUInt32BE(11), true),
             speed: data.readUInt8(15),
             course: data.readUInt16BE(16) & 0x03FF,
-            /*mcc: data.readUInt16BE(18),
-            mnc: data.readUInt8(20),
+            mcc: data.readUInt16BE(18),
+            /*mnc: data.readUInt8(20),
             lac: data.readUInt16BE(21),
             cellId: data.readUInt32BE(23) & 0x00FFFFFF,
             acc: (data.readUInt8(16) & 0x20) > 0,

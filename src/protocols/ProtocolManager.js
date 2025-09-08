@@ -13,10 +13,10 @@ class ProtocolManager {
     }
 
     detectProtocol(data) {
-        console.log('Detecting protocol for data:', data);
+        //console.log('Detecting protocol for data:', data);
         // GT06 Protocol detection
         if (data.length >= 2 && data[0] === 0x78 && data[1] === 0x78) {
-            console.log('GT06');
+            //console.log('GT06');
             return 'GT06';
         }
         
