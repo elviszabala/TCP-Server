@@ -36,7 +36,7 @@ class App {
 
             this.gpsServer.on('position', (data) => {
                 this.wsServer.broadcast('position', data);
-                //console.log('Position event for:', data);
+                console.log('Position event for:', data);
             });
 
             // GPS Server -> API (eventos de dispositivos)

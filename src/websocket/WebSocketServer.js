@@ -45,7 +45,7 @@ class WebSocketServer {
 
         if (!this.wss) return;
         const message = JSON.stringify({ type, payload });
-        console.log('Broadcasting message to WebSocket clients:', message);
+        
 
        /*  this.wss.clients.forEach((client) => {
             if (client.readyState === WebSocket.OPEN) {
