@@ -215,10 +215,10 @@ class GPSServer extends EventEmitter {
 
     async handleLogin(connection, data) {
         //console.log('a', data);
-        //console.log(' Y debo poner aqui ', data.data.deviceId);
+        //console.log(' Y debo poner aqui ', data);
     
         connection.setDeviceId(data.data.deviceId);
-        logger.info(`Device logged in: ${data.deviceId} from ${connection.id}`);
+        logger.info(`Device logged in: ${data.data.deviceId} from ${connection.id}`);
         //this.emit('device-connected', data.deviceId);
     }
 

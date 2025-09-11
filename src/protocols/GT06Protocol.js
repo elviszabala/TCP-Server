@@ -71,6 +71,8 @@ class GT06Protocol extends BaseProtocol {
     }
 
     parseLogin(data) {
+
+         //console.log('Data de login: ', data.length);
         if (data.length < 8) {
             throw new Error('GT06 login data too short');
         }
@@ -91,7 +93,7 @@ class GT06Protocol extends BaseProtocol {
 
     parsePosition(data) {
 
-        //console.log('Data de posicion: ', data);
+        //console.log('Data de posicion: ', data.length);
         if (data.length < 21) {
             throw new Error('GT06 position data too short');
         }
@@ -104,9 +106,9 @@ class GT06Protocol extends BaseProtocol {
             speed: data.readUInt8(15),
             course: data.readUInt16BE(16) & 0x03FF,
             mcc: data.readUInt16BE(18),
-            /*mnc: data.readUInt8(20),
+            mnc: data.readUInt8(20),
             lac: data.readUInt16BE(21),
-            cellId: data.readUInt32BE(23) & 0x00FFFFFF,
+            /*cellId: data.readUInt32BE(23) & 0x00FFFFFF,
             acc: (data.readUInt8(16) & 0x20) > 0,
             dataUploadMode: (data.readUInt8(16) & 0x40) > 0,
             gpsRealTime: (data.readUInt8(16) & 0x80) > 0 */
